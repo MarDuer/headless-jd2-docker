@@ -1,12 +1,9 @@
-[![Build Status](https://travis-ci.com/PlusMinus0/headless-jd2-docker.svg?branch=master)](https://travis-ci.com/PlusMinus0/headless-jd2-docker)
-# Supported tags
- * [`latest`, `debian`, `v3.0-debian` (debian.Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/master/debian.Dockerfile)
- * [`alpine`, `v3.0-alpine` (alpine.Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/master/alpine.Dockerfile)
- * [`dev-debian` (debian.Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/dev/debian.Dockerfile)
- * [`dev-alpine` (alpine.Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/dev/alpine.Dockerfile)
- * [`v2.1` (Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/v2.1/Dockerfile)
- * [`v2.0` (Dockerfile)](https://github.com/PlusMinus0/headless-jd2-docker/blob/v2.0/Dockerfile)
+# original sources
+The changes are based on
 
+https://github.com/PlusMinus0/headless-jd2-docker
+
+The only change is a call of umask
 
 # Running the container
 
@@ -40,5 +37,6 @@ EMAIL                | The MyJDownloader account e-mail. Is written automaticall
 PASSWORD             | The MyJDownloader account password. Is written automatically to config-file, if set.
 UID                  | Specifies the UID the daemon should run as. All created files will be owned by this UID. Defaults to 1000.
 GID                  | Specifies the GID for all created files. This only works in combination with the UID. Defaults to 100 for users.
+UMASK                | Specifies the mask for all created files and directories. If this environment variable is not specified 022 is used as default
 
 Not setting `UID` / `GID` will default to `1000`:`100`.
