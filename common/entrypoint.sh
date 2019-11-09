@@ -37,6 +37,8 @@ chown -R $UID:$GID /opt/JDownloader
 # Sometimes this gets deleted. Just copy it every time.
 cp /opt/JDownloader/sevenzip* /opt/JDownloader/libs/
 
+umask 002
+
 su-exec ${UID}:${GID} "$@"
 
 # Keep container alive when jd2 restarts
