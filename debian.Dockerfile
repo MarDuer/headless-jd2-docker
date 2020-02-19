@@ -35,4 +35,4 @@ RUN chmod +x /opt/JDownloader/entrypoint.sh
 
 ENTRYPOINT ["tini", "-g", "--", "/opt/JDownloader/entrypoint.sh"]
 # Run this when the container is started
-CMD ["java", "-Djava.awt.headless=true", "-jar", "/opt/JDownloader/JDownloader.jar"]
+CMD ["/usr/local/openjdk-11/bin/java", "-Djava.awt.headless=true", "-jar", "/opt/JDownloader/JDownloader.jar"]
